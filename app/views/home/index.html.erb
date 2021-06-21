@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+         <% if product.image.present? %> 
+            <img src="<%= url_for(product.image) %>" class="card-img-top" height="300" alt="...">
+         <% else %>
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+         <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= product.title %></h5>
+          <p class="card-text"> <%= product.description %></p>
+          <p class="card-text">Full Details: <%= product.detail %></p>
+          <% if product.free %>
+              <p class="card-text">Free</p>
+          <% else %>
+            <p class="card-text">Price: <%= product.price %></p>
+            <p class="card-text">Tax: <%= product.vat %> %</p>
+          <% end %>
+          <% if customer_signed_in? %>
+          <%= link_to "Add to cart", add_to_cart_path(product_id: product.id), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

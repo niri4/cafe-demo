@@ -34,7 +34,7 @@ rails s
 rspec
 ```
 
-### Asumptions
+### Assumptions
 - The Discount applied on order total
 - The One Discount applied on a order
 - The Discount applied on product not on product's quantity
@@ -43,7 +43,7 @@ rspec
 - In UI add fund disable is present as coming soon feature
 - Admin has access to create categories, product, discount and customer
 - Order are added to cart first and then order valid for payment
-- when customer paid the oirder it fund got deducted and refelect in header funds section
+- when customer paid the order it fund got deducted and refelect in header funds section
 - Once order is placed admin has access to complete the order
 - Discount are automatically applied on customer checkout
 
